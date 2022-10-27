@@ -2,12 +2,20 @@ package ru.liga.translateService.rules;
 
 import ru.liga.translateService.dictionary.DictionaryOngeer;
 
-public class ReplaceCharacterRuleOngeer implements ReplaceCharacterRule {
+public class ReplaceCharacterRuleOngeer extends RuleDecorator {
 
     private final DictionaryOngeer dictionaryOngeer = new DictionaryOngeer();
 
+    public ReplaceCharacterRuleOngeer(ReplaceCharacterRule rule) {
+        super(rule);
+    }
+
     @Override
     public String replaceCharacterBasedOnDictionary(final String resource) {
+        return rule.replaceCharacterBasedOnDictionary(rule(resource));
+    }
+
+    public String rule(final String resource) {
         String result = resource;
         for (String key : dictionaryOngeer.getCONSONANTS()) {
             result = swap(result, key, key + "ъ");
