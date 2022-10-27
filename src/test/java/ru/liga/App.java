@@ -364,13 +364,15 @@ public class App {
                         "        put(\"Цеп\", \"цѣп\");\n" +
                         "иеиоиуИеИоИук";
 
-        new TranslateService().translateString(tmp);
+        new TranslateService().translateString(tmp, "text");
 
         tmp = "Агафья, Анфим, Афанасий, Афина, Варфоломей, Голиаф, Евфимий, Марфа, Матфей, Мефодий, Нафанаил, Парфенон, Пифагор, Руфь, Саваоф, Тимофей, Эсфирь, Иудифь, Фаддей, Фекла, Фемида, Фемистокл, Феодор (Фёдор, Федя), Феодосий (Федосий), Феодосия, Феодот (Федот), Феофан, Феофил, Ферапонт, Фома, Фоминична";
 
         String[] arrTmp = tmp.split(" ");
         for (String asd : arrTmp) {
-            new TranslateService().translateName(asd);
+             asd = new TranslateService().translateString(asd, "name");
+            System.out.println(asd);
         }
+
     }
 }

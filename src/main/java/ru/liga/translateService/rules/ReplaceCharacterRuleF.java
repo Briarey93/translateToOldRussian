@@ -1,6 +1,4 @@
-package ru.liga.translateService;
-
-import ru.liga.translateService.rules.ReplaceCharacterRule;
+package ru.liga.translateService.rules;
 
 public class ReplaceCharacterRuleF implements ReplaceCharacterRule {
 
