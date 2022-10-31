@@ -370,7 +370,7 @@ public class App {
 
         String[] arrTmp = tmp.split(" ");
         for (String asd : arrTmp) {
-             asd = new TranslateService().translateString(asd, "name");
+            asd = new TranslateService().translateString(asd, "name");
             System.out.println(asd);
         }
 
