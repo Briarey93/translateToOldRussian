@@ -1,7 +1,9 @@
 package ru.liga.translateService.rules;
 
+import lombok.extern.slf4j.Slf4j;
 import ru.liga.translateService.dictionary.DictionaryOngeer;
 
+@Slf4j
 public class ReplaceCharacterRuleOngeer extends RuleDecorator {
 
     private final DictionaryOngeer dictionaryOngeer = new DictionaryOngeer();
@@ -12,6 +14,7 @@ public class ReplaceCharacterRuleOngeer extends RuleDecorator {
 
     @Override
     public String replaceCharacterBasedOnDictionary(final String resource) {
+        log.debug("Replace rule Ongeer.");
         return rule.replaceCharacterBasedOnDictionary(rule(resource));
     }
 

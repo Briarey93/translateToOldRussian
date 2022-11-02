@@ -363,17 +363,15 @@ public class App {
             "        put(\"Цеп\", \"цѣп\");\n" +
             "иеиоиуИеИоИук";
 
-    public static final String TEST_STRING_NAME = "Агафья, Анфим, Афанасий, Афина, Варфоломей, Голиаф, Евфимий, Марфа, Матфей, Мефодий, Нафанаил, Парфенон, Пифагор, Руфь, Саваоф, Тимофей, Эсфирь, Иудифь, Фаддей, Фекла, Фемида, Фемистокл, Феодор (Фёдор, Федя), Феодосий (Федосий), Феодосия, Феодот (Федот), Феофан, Феофил, Ферапонт, Фома, Фоминична";
-
+    public static final String TEST_STRING_NAME = "Агафья, Анфим, Афанасий, Афина, Варфоломей, Голиаф, Евфимий, " +
+            "Марфа, Матфей, Мефодий, Нафанаил, Парфенон, Пифагор, Руфь, Саваоф, Тимофей, Эсфирь, Иудифь, Фаддей, " +
+            "Фекла, Фемида, Фемистокл, Феодор (Фёдор, Федя), Феодосий (Федосий), Феодосия, Феодот (Федот), Феофан, " +
+            "Феофил, Ферапонт, Фома, Фоминична";
 
     public static void main(String[] args) {
-        String tmp = TEST_STRING_TEXT;
+        System.out.println(new TranslateService().translateString(TEST_STRING_TEXT));
 
-        new TranslateService().translateString(tmp);
-
-        tmp = TEST_STRING_NAME;
-
-        String[] arrTmp = tmp.split(" ");
+        String[] arrTmp = TEST_STRING_NAME.split(" ");
         for (String asd : arrTmp) {
             asd = new TranslateService().translateString(asd);
             System.out.println(asd);

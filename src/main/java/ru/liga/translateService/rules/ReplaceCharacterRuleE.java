@@ -1,7 +1,9 @@
 package ru.liga.translateService.rules;
 
+import lombok.extern.slf4j.Slf4j;
 import ru.liga.translateService.dictionary.DictionaryE;
 
+@Slf4j
 public class ReplaceCharacterRuleE extends RuleDecorator {
 
     private final DictionaryE dictionaryE = new DictionaryE();
@@ -12,6 +14,7 @@ public class ReplaceCharacterRuleE extends RuleDecorator {
 
     @Override
     public String replaceCharacterBasedOnDictionary(final String resource) {
+        log.debug("Replace rule E.");
         return rule.replaceCharacterBasedOnDictionary(rule(resource));
     }
 

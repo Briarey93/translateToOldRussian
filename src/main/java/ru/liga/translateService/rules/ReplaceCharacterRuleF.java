@@ -1,6 +1,13 @@
 package ru.liga.translateService.rules;
 
+import lombok.extern.slf4j.Slf4j;
+import ru.liga.translateService.dictionary.DictionaryF;
+
+@Slf4j
 public class ReplaceCharacterRuleF extends RuleDecorator {
+
+    private final DictionaryF dictionaryF = new DictionaryF();
+
 
     public ReplaceCharacterRuleF(ReplaceCharacterRule rule) {
         super(rule);
@@ -8,13 +15,15 @@ public class ReplaceCharacterRuleF extends RuleDecorator {
 
     @Override
     public String replaceCharacterBasedOnDictionary(final String resource) {
+        log.debug("Replace rule F.");
         return rule.replaceCharacterBasedOnDictionary(rule(resource));
     }
 
-    public String rule(String resource) {
-        if (resource.charAt(0) == 'Ф') {
-            return resource.replaceFirst("Ф", "Ѳ");
+    private String rule(final String resource) {
+        String result = resource;
+        for (String key : dictionaryF.getF_CHANGE_MAP().keySet()) {
+            result = SwapSubstrings.swap(result, key, dictionaryF.getF_CHANGE_MAP().get(key));
         }
-        return resource.replaceFirst("ф", "ѳ");
+        return result;
     }
 }
