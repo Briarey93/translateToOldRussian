@@ -1,4 +1,4 @@
-package ru.liga;
+package ru.liga.dictionaryUtils;
 
 public class FormatDictionaryE {
 

@@ -369,13 +369,13 @@ public class App {
     public static void main(String[] args) {
         String tmp = TEST_STRING_TEXT;
 
-        new TranslateService().translateString(tmp, "text");
+        new TranslateService().translateString(tmp);
 
         tmp = TEST_STRING_NAME;
 
         String[] arrTmp = tmp.split(" ");
         for (String asd : arrTmp) {
-            asd = new TranslateService().translateString(asd, "name");
+            asd = new TranslateService().translateString(asd);
             System.out.println(asd);
         }
     }
