@@ -1,46 +1,26 @@
 package ru.liga.translateService;
 
+
 import lombok.extern.slf4j.Slf4j;
 import ru.liga.translateService.rules.ReplaceCharacterRule;
-import ru.liga.translateService.rules.ReplaceCharacterRuleE;
-import ru.liga.translateService.rules.ReplaceCharacterRuleI;
-import ru.liga.translateService.rules.ReplaceCharacterRuleOngeer;
 
+/**
+ * Сервис перевода русского текста на древне русский.
+ */
 @Slf4j
 public class TranslateService {
-    private ReplaceCharacterRule replaceCharacterRule;
-
+    /**
+     * Метод преобразования русского текста на древне русский.
+     *
+     * @param resource - исходный текст.
+     * @return - возвращает текст, преобразованный на древне русский.
+     */
     public String translateString(final String resource) {
         log.debug(String.format("Start translate string:\"%s\"", resource));
-        String result = resource;
 
-        replaceCharacterRule = new ReplaceCharacterRuleE();
-        result = replaceCharacterRule.replaceCharacterBasedOnDictionary(result);
-
-        replaceCharacterRule = new ReplaceCharacterRuleI();
-        result = replaceCharacterRule.replaceCharacterBasedOnDictionary(result);
-
-        replaceCharacterRule = new ReplaceCharacterRuleOngeer();
-        result = replaceCharacterRule.replaceCharacterBasedOnDictionary(result);
+        String result = ReplaceCharacterRule.factory(resource);
 
         log.debug(String.format("Finish translate string:\"%s\"", result));
-        return result;
-    }
-
-    public String translateName(final String resource) {
-        log.debug(String.format("Start translate name:\"%s\"", resource));
-        String result = resource;
-
-        replaceCharacterRule = new ReplaceCharacterRuleI();
-        result = replaceCharacterRule.replaceCharacterBasedOnDictionary(result);
-
-        replaceCharacterRule = new ReplaceCharacterRuleOngeer();
-        result = replaceCharacterRule.replaceCharacterBasedOnDictionary(result);
-
-        replaceCharacterRule = new ReplaceCharacterRuleF();
-        result = replaceCharacterRule.replaceCharacterBasedOnDictionary(result);
-
-        log.debug(String.format("Finish translate name:\"%s\"", result));
         return result;
     }
 }
