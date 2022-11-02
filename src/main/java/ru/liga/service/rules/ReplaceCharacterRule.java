@@ -1,4 +1,4 @@
-package ru.liga.translateService.rules;
+package ru.liga.service.rules;
 
 public interface ReplaceCharacterRule {
     /**

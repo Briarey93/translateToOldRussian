@@ -1,6 +1,6 @@
 package ru.liga;
 
-import ru.liga.translateService.TranslateService;
+import ru.liga.service.TranslateService;
 
 public class App {
 

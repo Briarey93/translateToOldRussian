@@ -1,4 +1,4 @@
-package ru.liga.translateService.rules;
+package ru.liga.service.rules;
 
 import lombok.extern.slf4j.Slf4j;
 

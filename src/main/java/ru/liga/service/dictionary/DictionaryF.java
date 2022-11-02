@@ -1,4 +1,4 @@
-package ru.liga.translateService.dictionary;
+package ru.liga.service.dictionary;
 
 import lombok.Getter;
 

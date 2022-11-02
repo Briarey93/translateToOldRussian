@@ -1,13 +1,15 @@
-package ru.liga.translateService;
+package ru.liga.service;
 
 
 import lombok.extern.slf4j.Slf4j;
-import ru.liga.translateService.rules.ReplaceCharacterRule;
+import org.springframework.stereotype.Service;
+import ru.liga.service.rules.ReplaceCharacterRule;
 
 /**
  * Сервис перевода русского текста на древне русский.
  */
 @Slf4j
+@Service
 public class TranslateService {
     /**
      * Метод преобразования русского текста на древне русский.
@@ -21,6 +23,7 @@ public class TranslateService {
         String result = ReplaceCharacterRule.factory(resource);
 
         log.debug(String.format("Finish translate string:\"%s\"", result));
+        log.info("TranslateService finished.");
         return result;
     }
 }

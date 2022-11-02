@@ -1,4 +1,4 @@
-package ru.liga.translateService.rules;
+package ru.liga.service.rules;
 
 public class SwapSubstrings {
     public static String swap(String source, String target, String replacement) {

@@ -1,7 +1,7 @@
-package ru.liga.translateService.rules;
+package ru.liga.service.rules;
 
 import lombok.extern.slf4j.Slf4j;
-import ru.liga.translateService.dictionary.DictionaryE;
+import ru.liga.service.dictionary.DictionaryE;
 
 @Slf4j
 public class ReplaceCharacterRuleE extends RuleDecorator {
