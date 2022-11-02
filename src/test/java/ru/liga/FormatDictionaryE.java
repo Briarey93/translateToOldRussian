@@ -171,7 +171,6 @@ public class FormatDictionaryE {
 
 
     public static void main(String[] args) {
-        String str = DICTIONARY_WORDS;
-        formatStr(str);
+        formatStr(DICTIONARY_WORDS);
     }
 }
